@@ -20,8 +20,8 @@ else
 
 % Check mu and sig to prevent errors in numerical approximation        
 assert(nargin==2,' *** VBA_Convert_ToGamma: Both mu and sigma must be provided')
-assert(mu<2e-3 || mu>1e4,' *** VBA_Convert_ToGamma: mu must be greater than 2e-3 and smaller than 1e4')
-assert(sig/mu<2e-3 || sig/mu>50,' *** VBA_Convert_ToGamma: sig must be greater than 2e-3*mu and smaller than 50*mu')
+assert(mu>2e-3 || mu<1e4,' *** VBA_Convert_ToGamma: mu must be greater than 2e-3 and smaller than 1e4')
+assert(sig/mu>2e-3 || sig/mu<50,' *** VBA_Convert_ToGamma: sig must be greater than 2e-3*mu and smaller than 50*mu')
 
 % Upper bound for a
 a0 = 1/8*(1+sqrt(49+mu^4/sig^4+50*mu^2/sig^2)+mu^2/sig^2);
